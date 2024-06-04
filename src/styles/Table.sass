@@ -1,0 +1,53 @@
+@import Variables
+
+body
+  font-size: $base-font-size
+
+table 
+  border-collapse: collapse
+  background-color: $main-color
+
+table, th, td 
+  border: 1px solid black
+  padding: 0.5rem 1.1rem 0.5rem 1.1rem
+  margin: 0
+
+.td-content
+  display: flex
+  align-items: center
+  justify-content: center
+  text-align: center
+
+.table-options
+  background-color: #191970
+  color: white
+
+@media screen and (min-width: 0px)
+    table
+      max-width: $xxs
+      font-size: 0.8rem
+    td, tr
+      max-width: 40px
+
+@media screen and (min-width: 380px)
+    table
+      max-width: $xxs
+      font-size: 0.85rem
+    td, tr
+      max-width: 50px
+
+@media screen and (min-width: $xs)
+    table
+      max-width: $xs
+      font-size: 0.8rem
+    td, tr
+      max-width: $xs
+      padding: 0.6rem 1.3rem 0.6rem 1.3rem
+
+@media screen and (min-width: $s)
+    table
+        max-width: $s
+    td, tr
+      font-size: 1rem
+      padding: 0.7rem 2rem 0.7rem 2rem
+      max-width: $s
