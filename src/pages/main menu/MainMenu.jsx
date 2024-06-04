@@ -5,7 +5,7 @@ import '../main menu/MainMenu.sass';
 const MainMenu = () => {
   return (
     <div className="main-menu-container">
-        <h3 className='menu-title'>Products Menu</h3>
+        <h3 className='menu-title'>Options Menu</h3>
         <div className="buttons">
             <button className="menu-button">
               <Link to = '/Create' style={{textDecoration: "none", color: "#000"}} >Create item</Link>

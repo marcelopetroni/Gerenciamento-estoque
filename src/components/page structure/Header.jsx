@@ -7,7 +7,7 @@ const Header = () => {
     <header>
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap" rel="stylesheet"></link>
         <div className="icon" ><RiShoppingCartLine /></div>
-        <h1 className='logo-container' >Nunes Sports</h1>
+        <h1 className='logo-container' >Inventory</h1>
     </header>
   )
 }
