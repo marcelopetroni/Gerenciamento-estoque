@@ -5,19 +5,22 @@ import '../main menu/MainMenu.sass';
 const MainMenu = () => {
   return (
     <div className="main-menu-container">
-        <h3 className='menu-title'>Options Menu</h3>
+        <h3 className='menu-title'>Products Menu</h3>
         <div className="buttons">
             <button className="menu-button">
-              <Link to = '/Create' style={{textDecoration: "none", color: "#000"}} >Create item</Link>
+              <Link to='/Create' style={{textDecoration: "none", color: "#000"}}>Create item</Link>
             </button>
             <button className="menu-button">
-              <Link to = '/Read' style={{textDecoration: "none", color: "#000"}}>Read items</Link>
+              <Link to='/Read' style={{textDecoration: "none", color: "#000"}}>Read items</Link>
             </button>
             <button className="menu-button">
-              <Link to = '/Update' style={{textDecoration: "none", color: "#000"}}>Update item</Link>
-              </button>
+              <Link to='/Update' style={{textDecoration: "none", color: "#000"}}>Update item</Link>
+            </button>
             <button className="menu-button">
-              <Link to = '/Delete' style={{textDecoration: "none", color: "#000"}}>Delete item</Link>
+              <Link to='/Delete' style={{textDecoration: "none", color: "#000"}}>Delete item</Link>
+            </button>
+            <button className="menu-button">
+              <Link to='/Register' style={{textDecoration: "none", color: "#000"}}>Register Employee</Link>
             </button>
         </div>
     </div>
