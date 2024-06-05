@@ -11,7 +11,7 @@ function Autentication({ onLogin }) {
   
   return ( 
   <>
-    <header>
+    <header className='title-autentication'>
         <div class="title-container">
             <h1>Log-in</h1>
         </div>
