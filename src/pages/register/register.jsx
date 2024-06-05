@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IoCaretBackCircle } from "react-icons/io5";
-import * as Firebase from '../../services/CrudFirebase';
-import '../register/register.sass';
+import '../register/Register.sass';
 
 const Register = () => {
   const [values, setValues] = useState({});
