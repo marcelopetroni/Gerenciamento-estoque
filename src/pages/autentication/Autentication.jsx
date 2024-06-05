@@ -1,7 +1,14 @@
 import React from 'react'
 import '../autentication/Autentication.sass';
 
-const Autentication = () => {
+function Autentication({ onLogin }) {
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      // Esse onLogin vai ser chamado para quando a autenticação for feita com sucesso (checar valores no banco)
+      onLogin();
+    };
+  
   return ( 
   <>
     <header>
@@ -13,18 +20,18 @@ const Autentication = () => {
     <main>
         <fieldset>
             <legend>Dados</legend>
-            <form action="" class = "form-container">
+            <form action="" class = "form-container" onSubmit={handleSubmit}>
                 <div class="campo nome">
                     <label for="nome input">User:</label>
-                    <input type="text" id = "nome input"></input>
+                    <input type="text" id = "nome input" required></input>
                 </div>
         
                 <div class="campo email">
                     <label for="email input">Password:</label>
-                    <input type="password" id = "email input"></input>
+                    <input type="password" id = "email input" required></input>
                 </div>
 
-                <input type="submit" value="Enviar" class="submit-container"></input>
+                <button type="submit" class="submit-container">Enviar</button>
             </form>
         </fieldset>
     </main>
