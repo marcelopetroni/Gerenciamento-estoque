@@ -1,20 +1,17 @@
-// Gerenciamento-estoque/services/loginService.ts
+// loginService.ts
 
 export interface Employee {
-    id: number;
     username: string;
     password: string;
 }
 
-const employeeDatabase: Employee[] = [
-    {
-        id: 1,
-        username: 'admin',
-        password: 'password123'
-    }
+const employeesDatabase: Employee[] = [
+    { username: 'admin', password: 'password123' },
+    // Adicione mais funcionários conforme necessário
 ];
 
 export function loginService(username: string, password: string): Employee | null {
-    const employee = employeeDatabase.find(emp => emp.username === username && emp.password === password);
+    // Verificar se as credenciais correspondem a algum funcionário no banco de dados
+    const employee = employeesDatabase.find(emp => emp.username === username && emp.password === password);
     return employee ? { ...employee } : null;
 }

@@ -10,6 +10,7 @@ describe('Permission Service', () => {
 
         const hasAccess: boolean = hasPermission(username, requiredPermission);
 
+
         expect(hasAccess).toBe(true);
     });
 
