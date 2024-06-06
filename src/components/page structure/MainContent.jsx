@@ -7,7 +7,7 @@ import Read from '../../pages/read/Read';
 import Update from '../../pages/update/Update';
 import Delete from '../../pages/delete/Delete';
 import MainMenu from '../../pages/main menu/MainMenu';
-import Register from '../../pages/register/Register'; 
+import Register from '../../pages/register/RegisterEmployee'; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const MainContent = () => {
