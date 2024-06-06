@@ -3,7 +3,7 @@ atualizado corretamente.*/
 
 import { removeProduct, getProductDatabase } from '../services/removeProductService';
 
-describe('Remove Product Service', () => {
+describe('Remove Product Service', () => { //Remover serviço do produto
     beforeEach(() => {
         // Reinicializa o banco de dados antes de cada teste
         const initialDatabase = [
@@ -14,7 +14,7 @@ describe('Remove Product Service', () => {
         (getProductDatabase() as any[]).splice(0, getProductDatabase().length, ...initialDatabase);
     });
 
-    it('should remove a product successfully', () => {
+    it('should remove a product successfully', () => { //deve remover um produto com sucesso
         const productIdToRemove = '2';
         removeProduct(productIdToRemove);
 
@@ -25,7 +25,7 @@ describe('Remove Product Service', () => {
         expect(updatedDatabase.length).toBe(2);
     });
 
-    it('should not remove anything if product does not exist', () => {
+    it('should not remove anything if product does not exist', () => { //não deve remover nada se o produto não existir
         const nonExistingProductId = '4';
         removeProduct(nonExistingProductId);
 

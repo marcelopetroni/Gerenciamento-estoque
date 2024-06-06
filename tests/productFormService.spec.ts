@@ -3,8 +3,8 @@ se todos os campos estão vazios e o preço é zero.*/
 
 import { createProductForm, ProductFormData } from '../services/productFormService';
 
-describe('Product Form Service', () => {
-    it('should create an empty product form', () => {
+describe('Product Form Service', () => { //Serviço de formulário de produto
+    it('should create an empty product form', () => { //deve criar um formulário de produto vazio
         const emptyForm: ProductFormData = {
             name: '',
             code: '',

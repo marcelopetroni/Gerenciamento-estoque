@@ -2,8 +2,8 @@
 
 import { createUserService, User } from '../services/createUserService';
 
-describe('Create User Service', () => {
-    it('should create a new user with valid name and email', () => {
+describe('Create User Service', () => { //Criar serviço de usuário
+    it('should create a new user with valid name and email', () => { //deve criar um novo usuário com nome e email válidos
         const name = 'John Doe';
         const email = 'john.doe@example.com';
         const user: User = createUserService(name, email);
@@ -13,7 +13,7 @@ describe('Create User Service', () => {
         expect(user).toHaveProperty('email', email);
     });
 
-    it('should throw an error if name is not provided', () => {
+    it('should throw an error if name is not provided', () => { //deve gerar um erro se o nome não for fornecido
         const name = '';
         const email = 'john.doe@example.com';
         
@@ -22,7 +22,7 @@ describe('Create User Service', () => {
         }).toThrow('Name and email are required');
     });
 
-    it('should throw an error if email is not provided', () => {
+    it('should throw an error if email is not provided', () => { //'deve gerar um erro se o e-mail não for fornecido
         const name = 'John Doe';
         const email = '';
         

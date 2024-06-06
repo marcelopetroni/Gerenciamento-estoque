@@ -4,8 +4,8 @@ algum funcionário válido no banco de dados*/
 
 import { loginService, Employee } from '../services/loginService';
 
-describe('Login Service', () => {
-    it('should return the employee if credentials are valid', () => {
+describe('Login Service', () => {  //Serviço de login'
+    it('should return the employee if credentials are valid', () => { //deve devolver o funcionário se as credenciais forem válidas
         const validUsername = 'admin';
         const validPassword = 'password123';
 
@@ -16,7 +16,7 @@ describe('Login Service', () => {
         expect(employee?.password).toBe(validPassword);
     });
 
-    it('should return null if username is invalid', () => {
+    it('should return null if username is invalid', () => { //deve retornar nulo se o nome de usuário for inválido
         const invalidUsername = 'invalid';
         const validPassword = 'password123';
 
@@ -25,7 +25,7 @@ describe('Login Service', () => {
         expect(employee).toBeNull();
     });
 
-    it('should return null if password is invalid', () => {
+    it('should return null if password is invalid', () => { //deve retornar nulo se a senha for inválida
         const validUsername = 'admin';
         const invalidPassword = 'invalid';
 
@@ -34,7 +34,7 @@ describe('Login Service', () => {
         expect(employee).toBeNull();
     });
 
-    it('should return null if both username and password are invalid', () => {
+    it('should return null if both username and password are invalid', () => { //deve retornar nulo se o nome de usuário e a senha forem inválidos
         const invalidUsername = 'invalid';
         const invalidPassword = 'invalid';
 

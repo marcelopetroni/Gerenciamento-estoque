@@ -3,7 +3,7 @@ de dados é atualizado corretamente.*/
 
 import { updateProductDetails, getProductDatabase } from '../services/updateProductDetailsService';
 
-describe('Update Product Details Service', () => {
+describe('Update Product Details Service', () => { //Atualizar serviço de detalhes do produto
     beforeEach(() => {
         // Reinicializa o banco de dados antes de cada teste
         const initialDatabase = [
@@ -14,7 +14,7 @@ describe('Update Product Details Service', () => {
         (getProductDatabase() as any[]).splice(0, getProductDatabase().length, ...initialDatabase);
     });
 
-    it('should update product details correctly', () => {
+    it('should update product details correctly', () => { //deve atualizar os detalhes do produto corretamente
         const productIdToUpdate = '2';
         const updatedDetails = {
             name: 'Updated Product',
@@ -35,7 +35,7 @@ describe('Update Product Details Service', () => {
         });
     });
 
-    it('should not update anything if product does not exist', () => {
+    it('should not update anything if product does not exist', () => { //não deve atualizar nada se o produto não existir
         const nonExistingProductId = '4';
         const updatedDetails = {
             name: 'New Product',

@@ -3,7 +3,7 @@
 
 import { editProduct, getProductDatabase } from '../services/editProductService';
 
-describe('Edit Product Service', () => {
+describe('Edit Product Service', () => { //Editar serviço de produto
     beforeEach(() => {
         // Reinicializa o banco de dados antes de cada teste
         const initialDatabase = [
@@ -14,7 +14,7 @@ describe('Edit Product Service', () => {
         (getProductDatabase() as any[]).splice(0, getProductDatabase().length, ...initialDatabase);
     });
 
-    it('should allow modification of relevant fields of a product', () => {
+    it('should allow modification of relevant fields of a product', () => { //deve permitir a modificação de campos relevantes de um produto
         const productIdToUpdate = '2';
         const updatedProduct = {
             id: productIdToUpdate,
@@ -31,7 +31,7 @@ describe('Edit Product Service', () => {
         expect(modifiedProduct).toEqual(updatedProduct);
     });
 
-    it('should not modify anything if product does not exist', () => {
+    it('should not modify anything if product does not exist', () => { //não deve modificar nada se o produto não existir
         const nonExistingProductId = '4';
         const updatedProduct = {
             id: nonExistingProductId,

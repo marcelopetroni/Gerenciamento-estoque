@@ -2,13 +2,13 @@
 
 import { addProductService, getProductDatabase, Product } from '../services/addProductService';
 
-describe('Add Product Service', () => {
+describe('Add Product Service', () => { //Adicionar serviço de produto
     beforeEach(() => {
         // Limpar o "banco de dados" antes de cada teste
         (getProductDatabase() as Product[]).length = 0;
     });
 
-    it('should add a product successfully', () => {
+    it('should add a product successfully', () => { //deve adicionar um produto com sucesso
         const name = 'Product 1';
         const code = 'P001';
         const description = 'Description of Product 1';
@@ -25,7 +25,7 @@ describe('Add Product Service', () => {
         expect(products).toContainEqual(product);
     });
 
-    it('should throw an error if name is not provided', () => {
+    it('should throw an error if name is not provided', () => { //deve gerar um erro se o nome não for fornecido
         const name = '';
         const code = 'P001';
         const description = 'Description of Product 1';
@@ -36,7 +36,7 @@ describe('Add Product Service', () => {
         }).toThrow('Product name, code, description, and price are required');
     });
 
-    it('should throw an error if code is not provided', () => {
+    it('should throw an error if code is not provided', () => { //deve gerar um erro se o código não for fornecido
         const name = 'Product 1';
         const code = '';
         const description = 'Description of Product 1';
@@ -47,7 +47,7 @@ describe('Add Product Service', () => {
         }).toThrow('Product name, code, description, and price are required');
     });
 
-    it('should throw an error if description is not provided', () => {
+    it('should throw an error if description is not provided', () => { //deve gerar um erro se a descrição não for fornecida
         const name = 'Product 1';
         const code = 'P001';
         const description = '';
@@ -58,7 +58,7 @@ describe('Add Product Service', () => {
         }).toThrow('Product name, code, description, and price are required');
     });
 
-    it('should throw an error if price is not provided', () => {
+    it('should throw an error if price is not provided', () => { //deve gerar um erro se o preço não for fornecido
         const name = 'Product 1';
         const code = 'P001';
         const description = 'Description of Product 1';

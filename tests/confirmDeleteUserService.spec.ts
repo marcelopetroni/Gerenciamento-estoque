@@ -2,7 +2,7 @@
 
 import { confirmDeleteUser, getUserDatabase } from '../services/confirmDeleteUserService';
 
-describe('Confirm Delete User Service', () => {
+describe('Confirm Delete User Service', () => { //Confirmar exclusão do serviço do usuário
     beforeEach(() => {
         // Reinicializa o banco de dados antes de cada teste
         const initialDatabase = [
@@ -13,7 +13,7 @@ describe('Confirm Delete User Service', () => {
         (getUserDatabase() as any[]).splice(0, getUserDatabase().length, ...initialDatabase);
     });
 
-    it('should confirm the deletion of a user', () => {
+    it('should confirm the deletion of a user', () => { //deve confirmar a exclusão de um usuário
         const userIdToDelete = '2';
         confirmDeleteUser(userIdToDelete);
 
@@ -24,7 +24,7 @@ describe('Confirm Delete User Service', () => {
         expect(updatedDatabase.length).toBe(2);
     });
 
-    it('should not delete anything if user does not exist', () => {
+    it('should not delete anything if user does not exist', () => { //não deve excluir nada se o usuário não existir
         const nonExistingUserId = '4';
         confirmDeleteUser(nonExistingUserId);
 

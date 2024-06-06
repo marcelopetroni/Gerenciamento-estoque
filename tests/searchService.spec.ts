@@ -2,8 +2,8 @@
 
 import { search, SearchResult } from '../services/searchService';
 
-describe('Search Service', () => {
-    it('should return relevant search results', () => {
+describe('Search Service', () => { //Serviço de pesquisa
+    it('should return relevant search results', () => { //deve retornar resultados de pesquisa relevantes
         const query = 'product';
 
         const expectedResults: SearchResult[] = [
