@@ -15,7 +15,7 @@ const MainMenu = () => {
 
   return (
     <div className="main-menu-container">
-      <h3 className='menu-title'>Products Menu</h3>
+      <h3 className='menu-title'>Main Menu</h3>
       <div className="buttons">
         <button className="menu-button">
           <Link to='/Create' style={{textDecoration: "none", color: "#000"}}>Create item</Link>
@@ -31,7 +31,7 @@ const MainMenu = () => {
         </button>
         {isAdmin && (
           <button className="menu-button">
-            <Link to='/Register' style={{textDecoration: "none", color: "#000"}}>Registrar Funcionário</Link>
+            <Link to='/Register' style={{textDecoration: "none", color: "#000"}}>Register Employee</Link>
           </button>
         )}
       </div>

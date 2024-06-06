@@ -37,10 +37,9 @@ function App() {
     <>
       {isAuthenticated ? (
         <>
-          <Header />
+          <Header onLogOut={handleLogout}/>
           <MainContent />
           <Footer />
-          <button onClick={handleLogout}>Logout</button> {}
         </>
       ) : (
         <Autentication onLogin={handleLogin} /> 

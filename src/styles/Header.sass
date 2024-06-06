@@ -8,13 +8,34 @@ body
     background-color: $main-color
     font-size: $base-font-size
 
-header 
+.header-main 
+    display: flex
+    justify-content: space-between 
+    align-items: center
+    padding: 1rem
+    height: 5rem
+
+.button-container 
+    display: flex
+    align-items: center
+    position: absolute
+    z-index: 1
+    
+.button-container button
+    cursor: pointer
+    font-family: "Manrope", sans-serif
+    width: 55px
+    height: 25px
+    border-radius: 4px
+    border: 1px solid #a5a5a5
+
+.header-title-container 
+    position: relative
     display: flex
     align-items: center
     justify-content: center
     font-family: 'Manrope', sans-serif
-    padding: 1rem
-    height: 5rem
+    flex: 1  /* Ocupa o espaço restante da header */
 
 .logo-container
     color: #191970
@@ -36,3 +57,12 @@ header
 @media screen and (max-width: 350px)
     .logo-container
         font-size: 2rem
+
+    .button-container button
+        width: 42px
+        height: 24px
+        font-size: 11px
+
+@media screen and (min-width: 640px)
+    .button-container
+        left: 3rem

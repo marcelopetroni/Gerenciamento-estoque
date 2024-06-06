@@ -21,16 +21,16 @@ function Authentication({ onLogin }) {
       try {
         await onLogin(username, password);
       } catch (error) {
-        setError('Usuário ou senha incorretos');
+        setError('Usuário ou senha incorretos.');
       }
     };
     return (
       <>
-        <header className='title-authentication'>
-          <div className="title-container">
+        <header className='header-autentication'>
+          <div className="title-authentication">
             <h1>Log-in</h1>
+            <p>Acesse aqui o sistema:</p>
           </div>
-          <p>Acesse aqui o sistema:</p>
         </header>
         <main>
           <fieldset>
