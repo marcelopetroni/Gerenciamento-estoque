@@ -6,6 +6,7 @@
   "scripts": {
     "start": "vite",
     "test": "jest",
+    "test:watch": "jest --watch",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
