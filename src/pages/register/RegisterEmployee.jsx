@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { IoCaretBackCircle } from "react-icons/io5";
-import '../register/Register.sass';
+import '../register/RegisterEmployee.sass';
 import Parse from 'parse'; 
 import { useState } from 'react';
 
