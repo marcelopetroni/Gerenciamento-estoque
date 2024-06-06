@@ -1,14 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import Parse from 'parse';
 import '../autentication/Autentication.sass';
 
-function Autentication({ onLogin }) {
+Parse.initialize('ribBIuffH5NpAtm2U8kw3IUZuhtYEePn494gVNpW', 'Hmm4p1Bp6NaKzl0hgnENaCivbgMtgVm2oPt3H8uE');
+Parse.serverURL = 'https://parseapi.back4app.com/';
 
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      // Esse onLogin vai ser chamado para quando a autenticação for feita com sucesso (checar valores no banco)
-      onLogin();
+
+ function Autentication({ onLogin }) {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+     // Esse onLogin vai ser chamado para quando a autenticação for feita com sucesso (checar valores no banco)
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        try {
+            const user = await Parse.User.logIn(username, password);
+            onLogin(user);
+        } catch (error) {
+            setError('Usuário ou senha incorretos');
+        }
     };
-  
+
   return ( 
   <>
     <header className='title-autentication'>

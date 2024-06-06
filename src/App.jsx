@@ -1,14 +1,32 @@
-import { useState } from 'react';
 import Header from './components/page structure/Header'; 
 import MainContent from './components/page structure/MainContent'; 
 import Footer from './components/page structure/Footer'; 
 import Autentication from './pages/autentication/Autentication'; 
+import Parse from 'parse'; 
+import React, { useEffect, useState } from 'react';
+
+Parse.initialize('ribBIuffH5NpAtm2U8kw3IUZuhtYEePn494gVNpW', 'Hmm4p1Bp6NaKzl0hgnENaCivbgMtgVm2oPt3H8uE');
+Parse.serverURL = 'https://parseapi.back4app.com/';
+
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
-  const handleLogin = () => {
-    setIsAuthenticated(true);
+  useEffect(() => {
+    // Verifica se o usuaro ja ta autenticado
+    const currentUser = Parse.User.current();
+    if (currentUser) {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  const handleLogin = async (username, password) => {
+    try {
+      await Parse.User.logIn(username, password);
+      setIsAuthenticated(true);
+    } catch (error) {
+      alert('Erro ao fazer login: ' + error.message);
+    }
   };
 
   return (

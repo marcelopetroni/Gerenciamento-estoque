@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IoCaretBackCircle } from "react-icons/io5";
 import '../register/Register.sass';
+import Parse from 'parse'; 
+import { useState, useEffect } from 'react';
+
+Parse.initialize('ribBIuffH5NpAtm2U8kw3IUZuhtYEePn494gVNpW', 'Hmm4p1Bp6NaKzl0hgnENaCivbgMtgVm2oPt3H8uE');
+Parse.serverURL = 'https://parseapi.back4app.com/';
+
+
 
 const Register = () => {
   const [values, setValues] = useState({});
@@ -14,12 +20,26 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aqui você pode adicionar a lógica para enviar os dados de registro
-    console.log('Valores enviados:', values);
-    // Limpar os campos após o envio
-    setValues({});
+
+    try {
+      // Cria um novo objeto 'Employee' no Back4App
+      const Employee = new Parse.Object('Employee');
+      // Define os valores do objeto
+      Employee.set('name', values.name);
+      Employee.set('id', values.id);
+      Employee.set('position', values.position);
+      // Salva o objeto no Back4App
+      await Employee.save();
+
+      // Limpa os campos após o envio bem-sucedido
+      setValues({});
+      alert('Registro de funcionário realizado com sucesso!');
+    } catch (error) {
+      console.error('Erro ao registrar funcionário:', error);
+      alert('Erro ao registrar funcionário. Por favor, tente novamente.');
+    }
   };
 
   return (
