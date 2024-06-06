@@ -10,10 +10,9 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
 
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Verifica se o usuaro ja ta autenticado
     const currentUser = Parse.User.current();
     if (currentUser) {
       setIsAuthenticated(true);
@@ -22,11 +21,16 @@ function App() {
 
   const handleLogin = async (username, password) => {
     try {
-      await Parse.User.logIn(username, password);
+      await Parse.User.logIn(String(username), String(password));
       setIsAuthenticated(true);
     } catch (error) {
-      alert('Erro ao fazer login: ' + error.message);
+      alert('Erro ao fazer login: Usuário ou Senha não válidos');
     }
+  };
+   const handleLogout = () => {
+    Parse.User.logOut().then(() => {
+      setIsAuthenticated(false); 
+    });
   };
 
   return (
@@ -36,6 +40,7 @@ function App() {
           <Header />
           <MainContent />
           <Footer />
+          <button onClick={handleLogout}>Logout</button> {}
         </>
       ) : (
         <Autentication onLogin={handleLogin} /> 
@@ -47,3 +52,4 @@ function App() {
 }
 
 export default App;
+	

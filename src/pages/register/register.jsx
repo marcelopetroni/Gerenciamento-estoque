@@ -2,14 +2,12 @@ import { Link } from 'react-router-dom';
 import { IoCaretBackCircle } from "react-icons/io5";
 import '../register/Register.sass';
 import Parse from 'parse'; 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 Parse.initialize('ribBIuffH5NpAtm2U8kw3IUZuhtYEePn494gVNpW', 'Hmm4p1Bp6NaKzl0hgnENaCivbgMtgVm2oPt3H8uE');
 Parse.serverURL = 'https://parseapi.back4app.com/';
 
-
-
-const Register = () => {
+const Register = ({ currentUser }) => {
   const [values, setValues] = useState({});
 
   const handleValues = (e) => {
@@ -23,24 +21,39 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      // Cria um novo objeto 'Employee' no Back4App
-      const Employee = new Parse.Object('Employee');
-      // Define os valores do objeto
-      Employee.set('name', values.name);
-      Employee.set('id', values.id);
-      Employee.set('position', values.position);
-      // Salva o objeto no Back4App
-      await Employee.save();
+    if (!values.name || !values.id || !values.position || !values.username || !values.password) {
+      alert('Por favor, preencha todos os campos.');
+      return;
+    }
 
-      // Limpa os campos após o envio bem-sucedido
-      setValues({});
-      alert('Registro de funcionário realizado com sucesso!');
+    try {
+      const user = new Parse.User();
+      user.set('username', values.username.toString());
+      user.set('password', values.password.toString());
+      user.set('name', values.name);
+      user.set('employeeId', values.id);
+      user.set('position', values.position);
+      user.set('visualizarPassword', values.password); 
+
+
+      await user.signUp();
+
+      // Limpar os campos
+      setValues({
+        name: '',
+        id: '',
+        position: '',
+        username: '',
+        password: ''
+      });
+
+      alert('Funcionário adicionado com sucesso.');
     } catch (error) {
-      console.error('Erro ao registrar funcionário:', error);
-      alert('Erro ao registrar funcionário. Por favor, tente novamente.');
+      console.error('Erro ao adicionar funcionário:', error);
+      alert('Erro ao adicionar funcionário. Por favor, tente novamente.');
     }
   };
+
 
   return (
     <div className="register-container">
@@ -48,13 +61,13 @@ const Register = () => {
         <Link to='/'>
           <IoCaretBackCircle className='back-button' />
         </Link>
-        <h3 className='register-title'>Register Employee</h3>
+        <h3 className='register-title'>Cadastrar Funcionário</h3>
       </div>
 
       <div className="fields">
         <form onSubmit={handleSubmit}>
           <div className='register-field'>
-            <label className="field-description">Employee Name:</label>
+            <label className="field-description">Nome do Funcionário:</label>
             <input
               className="field"
               type="text"
@@ -66,7 +79,7 @@ const Register = () => {
           </div>
 
           <div className='register-field'>
-            <label className="field-description">Employee ID:</label>
+            <label className="field-description">Funcionário ID:</label>
             <input
               className="field"
               type="text"
@@ -78,7 +91,7 @@ const Register = () => {
           </div>
 
           <div className='register-field'>
-            <label className="field-description">Employee Position:</label>
+            <label className="field-description">Funcionário Posição:</label>
             <input
               className="field"
               type="text"
@@ -89,11 +102,35 @@ const Register = () => {
             />
           </div>
 
+          <div className='register-field'>
+            <label className="field-description">Username:</label>
+            <input
+              className="field"
+              type="text"
+              required
+              name='username'
+              onChange={handleValues}
+              value={values.username || ''}
+            />
+          </div>
+
+          <div className='register-field'>
+            <label className="field-description">Password:</label>
+            <input
+              className="field"
+              type="password"
+              required
+              name='password'
+              onChange={handleValues}
+              value={values.password || ''}
+            />
+          </div>
+
           <button
             type="submit"
             className="button"
           >
-            <span className="label">Register</span>
+            <span className="label">Cadastrar</span>
           </button>
         </form>
       </div>
