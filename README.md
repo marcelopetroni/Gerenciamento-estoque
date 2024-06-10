@@ -23,6 +23,11 @@
   <li>Logout: Botão para sair da sessão do usuário.</li>
 </ul>
 <h3>4. Demonstração</h3>
+<h4><b>Página de autenticação de usuário:</b></h4>
+<h4>Primeiramente é necessário realizar log-in no qual apenas usuários cadastrados podem acessar o sistema. Os campos a serem inseridos são o de username e senha que são verificados se estam presentes no banco de dados.</h4>
+
+![Captura de tela 2024-06-10 081639](https://github.com/marcelopetroni/Gerenciamento-estoque/assets/105806830/ea18c5e8-256a-4937-a97b-b7159db4daa7)
+
 <h4><b>Create:</b></h4>
 <p>É inserido os campos nome, código, descrição e preço e enviado para o banco de dados.</p>
 
