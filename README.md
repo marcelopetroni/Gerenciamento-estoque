@@ -23,27 +23,27 @@
   <li>Logout: Botão para sair da sessão do usuário.</li>
 </ul>
 <h3>4. Demonstração</h3>
-<p><b>Create:</b></p>
+<h4><b>Create:</b></h4>
 <p>É inserido os campos nome, código, descrição e preço e enviado para o banco de dados.</p>
 
 ![Captura de tela 2024-06-10 081728](https://github.com/marcelopetroni/Gerenciamento-estoque/assets/105806830/965e7e10-af52-4c4a-9822-f8c8bc11ce32)
 
-<p><b>Read:</b></p>
+<h4><b>Read:</b></h4>
 <p>É feito uma solitação do tipo GET para exibir informações dos produtos em uma tabela.</p>
 
-![Captura de tela 2024-06-10 081751](https://github.com/marcelopetroni/Gerenciamento-estoque/assets/105806830/43875f8d-67a0-49d7-8e42-174f1ffd50b4)
+![Captura de tela 2024-06-10 081751](https://github.com/marcelopetroni/Gerenciamento-estoque/assets/105806830/ba5d9128-9191-4a49-b376-949b6bf46074)
 
-<p><b>Update:</b></p>
+<h4><b>Update:</b></h4>
 <p>É solicitado o código do produto e em seguida exibido uma página com os campos a serem inseridos novamente com novos valores.</p>
 
 ![Captura de tela 2024-06-10 081808](https://github.com/marcelopetroni/Gerenciamento-estoque/assets/105806830/c93f0ce4-a3c4-4a21-8de7-cf65d8b684f5)
 
-<p><b>Delete:</b></p>
+<h4><b>Delete:</b></h4>
 <p>É solicitado o código do produto e em seguida, se achado no banco de dados, é apagado.</p>
 
 ![Captura de tela 2024-06-10 081808](https://github.com/marcelopetroni/Gerenciamento-estoque/assets/105806830/7f216986-9799-40d3-ae56-c4d8384eacf1)
 
-<p><b>Registrar Funcionários:</b></p>
+<h4><b>Registrar Funcionários:</b></h4>
 <p>É inserido os campos nome, id, posição, username e senha e enviado para o banco de dados.</p>
 
 ![Captura de tela 2024-06-10 082118](https://github.com/marcelopetroni/Gerenciamento-estoque/assets/105806830/e1152250-ad84-4d69-a3bb-f94b2df21806)
